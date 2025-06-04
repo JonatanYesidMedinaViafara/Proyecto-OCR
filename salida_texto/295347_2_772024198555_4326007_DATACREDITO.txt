@@ -1,0 +1,344 @@
+
+--- Página 1 (texto embebido) ---
+CRISTANCHO AVILA LUIS ENRIQUE
+   66
+Nombre:
+Num. Documento:
+Genero:
+Rango Edades:
+.NULL.
+-
+Manizales
+Lugar 
+Expedición:
+09/05/1967
+Fecha Exp.:
+Tipo 
+Documento:
+C.E.
+Vigente
+Estado Documento:
+Acierta + :
+       819
+19/01/2024
+Fecha
+Consulta:
+CONSULTAS
+Tipo
+Entidad
+Fecha Apertura
+AVISTA COLOMBI A
+11/10/2023
+EXCELCREDIT SA
+  /  /
+OBLIGACIONES VIGENTES
+Estado
+Obligación
+Tipo
+Cuenta
+Entidad
+No.
+Obligación
+Garante
+Valor
+Inicial
+Saldo
+Actual
+Saldo
+Mora
+Valor
+Cuota
+Fecha
+Apertura
+Fecha
+Ven
+Fecha
+UAC
+Tipo
+Califica
+Sector
+Tipo
+Obligacion
+Endeudamiento Global
+BANCO
+.NULL.
+          0
+          0
+          0
+          0   /  /
+.NULL.
+.NULL.
+SC
+1
+Sin Informacion
+Cuenta Cartera
+BANCO
+000252059
+Deudor
+  2,632,000
+  2,585,000
+          0
+     75,000   /  /
+12/03/0035
+30/11/0023
+AL DIA
+A
+1
+Libranza
+Cuenta de ahorros
+BCO POPULAR
+800494751
+          0
+          0
+          0
+          0   /  /
+.NULL.
+30/04/0023
+AL DIA
+A
+1
+Sin Informacion
+Endeudamiento Global
+COLOMBIA MOVIL
+.NULL.
+          0
+          0
+          0
+          0   /  /
+.NULL.
+.NULL.
+SC
+4
+Sin Informacion
+Cuenta Cartera
+COLOMBIA MOVIL
+000852684
+Deudor
+          0
+     35,000
+          0
+          0   /  /
+31/12/0040
+31/12/0023
+AL DIA
+SC
+4
+Consumo
+Endeudamiento Global
+KREDIT PLUS    SAS
+.NULL.
+          0
+          0
+          0
+          0   /  /
+.NULL.
+.NULL.
+SC
+3
+Sin Informacion
+Cuenta Cartera
+KREDIT PLUS    SAS
+IAN028925
+Deudor
+ 29,374,000
+ 28,378,000
+          0
+    478,000 06/08/2022
+08/04/0035
+30/11/0023
+AL DIA
+SC
+3
+Libranza
+OBLIGACIONES CERRADAS
+Estado
+Obligación
+Tipo
+Cuenta
+Entidad
+No.
+Obligación
+Garante
+Fecha
+Apertura
+Fecha
+Ven
+Tipo
+Fecha
+UAC
+Cuenta Cartera
+BANCO
+000084424
+Deudor
+  /  /
+30/08/0019
+PAGO VOL Cerrada Pag
+30/08/0019
+Cuenta Cartera
+BANCO
+000129096
+Deudor
+  /  /
+18/08/0020
+PAGO VOL Cerrada Pag
+18/08/0020
+Cuenta Cartera
+BANCO
+000108378
+Deudor
+  /  /
+18/08/0020
+PAGO VOL Cerrada Pag
+18/08/0020
+Cuenta Cartera
+BANCO
+000143585
+Deudor
+  /  /
+18/02/0021
+PAGO VOL Cerrada Pag
+18/02/0021
+Cuenta Cartera
+BANCO
+000156328
+Deudor
+  /  /
+24/01/0022
+PAGO VOL Cerrada Pag
+24/01/0022
+Cuenta Cartera
+BANCO
+300001914
+Deudor
+  /  /
+29/06/0022
+PAGO VOL Cerrada Pag
+29/06/0022
+Cuenta Corriente
+BANCOLOMBIA
+000012231
+  /  /
+.NULL.
+CANCELADA VOL Cerrad
+30/11/0020
+Cuenta Cartera
+BANCOLOMBIA
+000012231
+Deudor
+  /  /
+24/12/0019
+PAGO VOL Cerrada Pag
+31/05/0022
+Cuenta de ahorros
+BCO COLPATRIA
+727202228
+  /  /
+.NULL.
+CANCELADA VOL Cerrad
+31/12/0022
+Cuenta de ahorros
+BCO COLPATRIA
+272022272
+  /  /
+.NULL.
+PAGO VOL MX 30
+31/12/0023
+Cuenta Cartera
+ITAU CORPBANCA
+700000027
+Deudor
+04/01/1998
+30/04/0098
+PAGO VOL Cerrada Pag
+30/04/0098
+Cuenta Cartera
+LAGOBO S.A
+LI-671600
+Deudor
+04/12/2018
+30/05/0026
+PAGO VOL Cerrada Pag
+31/10/0018
+Cuenta Cartera
+SOCOMIR
+000024621
+Deudor
+  /  /
+05/12/0018
+PAGO VOL Cerrada Pag
+31/05/0014
+Cuenta Cartera
+SOCOMIR
+000049229
+Deudor
+  /  /
+28/01/0024
+PAGO VOL Cerrada Pag
+30/04/0018
+Cuenta Cartera
+SOCOMIR
+000014039
+Deudor
+08/10/2011
+05/10/0016
+PAGO VOL Cerrada Pag
+31/10/0013
+Cuenta Cartera
+SOCOMIR
+000033139
+Deudor
+05/12/2014
+30/06/0019
+PAGO VOL Cerrada Pag
+31/01/0015
+Cuenta Cartera
+SOCOMIR
+000039163
+Deudor
+01/08/2015
+28/02/0021
+PAGO VOL Cerrada Pag
+30/11/0015
+Cuenta Cartera
+SOCOMIR
+000005581
+Deudor
+02/08/2017
+30/03/0024
+PAGO VOL Cerrada Pag
+30/04/0018
+
+--- Página 2 (texto embebido) ---
+CRISTANCHO AVILA LUIS ENRIQUE
+   66
+Nombre:
+Num. Documento:
+Genero:
+Rango Edades:
+.NULL.
+-
+Manizales
+Lugar 
+Expedición:
+09/05/1967
+Fecha Exp.:
+Tipo 
+Documento:
+C.E.
+Vigente
+Estado Documento:
+Acierta + :
+       819
+19/01/2024
+Fecha
+Consulta:
+OBLIGACIONES VIGENTES SECTOR
+Tipo
+Saldo Actual
+Sector
+  2,585,000
+1
+ 56,756,000
+3
+     70,000
+4

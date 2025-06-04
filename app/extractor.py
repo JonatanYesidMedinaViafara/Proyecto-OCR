@@ -17,10 +17,15 @@ warnings.filterwarnings("ignore", message=".*CropBox missing.*")
 # Permite importar config relativo
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
-from utils.extract_images import extraer_imagenes_de_pdf
-from utils.extract_tables import extraer_tablas_de_pdf
-from utils.extract_tables_ocr import extraer_tablas_ocr_pdf
+from utils.extract_images import extraer_imagenes_de_pdf#esta comentada 
+from utils.extract_tables import extraer_tablas_de_pdf#esta comentada 
+from utils.extract_tables_ocr import extraer_tablas_ocr_pdf#esta comentada 
 from utils.classify_document import clasificar_documento
+from utils.extract_fields import extraer_campos_desprendible_nomina
+from utils.extract_fields import extraer_campos_formato_conocimiento
+from utils.extract_fields import extraer_campos_soportes_recompra
+from utils.extract_fields import extraer_campos_datacredito
+
 
 # Configuración de Tesseract
 pytesseract.pytesseract.tesseract_cmd = config.TESSERACT_PATH
@@ -74,13 +79,34 @@ for archivo in os.listdir(config.CARPETA_PDFS):
                     ocr_texto = pytesseract.image_to_string(gris, lang='spa')
                     texto_total += f"\n--- Página {num_pagina + 1} (OCR) ---\n"
                     texto_total += ocr_texto
+                # Ejecutamos extracción de campos si es DESPRENDIBLE_NOMINA
+
+
 
             # # Guardamos el texto
-            # nombre_salida = os.path.splitext(archivo)[0] + ".txt"
-            # ruta_salida = os.path.join(config.CARPETA_SALIDA, nombre_salida)
+            nombre_salida = os.path.splitext(archivo)[0] + ".txt"
+            ruta_salida = os.path.join(config.CARPETA_SALIDA, nombre_salida)
 
-            # with open(ruta_salida, "w", encoding="utf-8") as f:
-            #     f.write(texto_total)
+            with open(ruta_salida, "w", encoding="utf-8") as f:
+                f.write(texto_total)
+
+            if tipo_doc == "DESPRENDIBLE_NOMINA":
+                campos = extraer_campos_desprendible_nomina(texto_total)
+                print("Datos extraídos del DESPRENDIBLE NOMINA:")
+                print(campos)
+            if tipo_doc == "FORMATO_CONOCIMIENTO":
+                campos = extraer_campos_formato_conocimiento(texto_total)
+                print("Datos extraídos del FORMATO CONOCIMIENTO:")
+                print(campos)
+            if tipo_doc == "SOPORTES_RECOMPRA":
+                campos = extraer_campos_soportes_recompra(texto_total)
+                print("Datos extraídos del SOPORTES RECOMPRA:")
+                print(campos)
+            if tipo_doc == "DATACREDITO":
+                campos = extraer_campos_datacredito(texto_total)
+                print("Datos extraídos del DATACREDITO:")
+                print(campos)
+
 
 
             #durmiendo temporal
