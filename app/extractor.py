@@ -19,6 +19,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
 from utils.extract_images import extraer_imagenes_de_pdf
 from utils.extract_tables import extraer_tablas_de_pdf
+from utils.extract_tables_ocr import extraer_tablas_ocr_pdf
 
 # Configuración de Tesseract
 pytesseract.pytesseract.tesseract_cmd = config.TESSERACT_PATH
@@ -32,11 +33,14 @@ os.makedirs(CARPETA_IMAGENES, exist_ok=True)
 CARPETA_TABLAS = os.path.join(config.BASE_DIR, "salida_tablas")
 os.makedirs(CARPETA_TABLAS, exist_ok=True)
 
+CARPETA_TABLAS_OCR = os.path.join(config.BASE_DIR, "salida_tablas_ocr")
+os.makedirs(CARPETA_TABLAS_OCR, exist_ok=True)
 
 # Procesar todos los PDFs
 for archivo in os.listdir(config.CARPETA_PDFS):
     if archivo.lower().endswith(".pdf"):
         ruta_pdf = os.path.join(config.CARPETA_PDFS, archivo)
+        extraer_tablas_ocr_pdf(ruta_pdf, CARPETA_TABLAS_OCR)
         extraer_imagenes_de_pdf(ruta_pdf, CARPETA_IMAGENES)
         extraer_tablas_de_pdf(ruta_pdf, CARPETA_TABLAS)
         print(f"\nProcesando archivo: {archivo}")
