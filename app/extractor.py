@@ -20,6 +20,7 @@ import config
 from utils.extract_images import extraer_imagenes_de_pdf
 from utils.extract_tables import extraer_tablas_de_pdf
 from utils.extract_tables_ocr import extraer_tablas_ocr_pdf
+from utils.classify_document import clasificar_documento
 
 # Configuración de Tesseract
 pytesseract.pytesseract.tesseract_cmd = config.TESSERACT_PATH
@@ -37,27 +38,30 @@ CARPETA_TABLAS_OCR = os.path.join(config.BASE_DIR, "salida_tablas_ocr")
 os.makedirs(CARPETA_TABLAS_OCR, exist_ok=True)
 
 # Procesar todos los PDFs
+# Procesar todos los PDFs
 for archivo in os.listdir(config.CARPETA_PDFS):
     if archivo.lower().endswith(".pdf"):
         ruta_pdf = os.path.join(config.CARPETA_PDFS, archivo)
-        extraer_tablas_ocr_pdf(ruta_pdf, CARPETA_TABLAS_OCR)
-        extraer_imagenes_de_pdf(ruta_pdf, CARPETA_IMAGENES)
-        extraer_tablas_de_pdf(ruta_pdf, CARPETA_TABLAS)
-        print(f"\nProcesando archivo: {archivo}")
+        #print(f"\nProcesando archivo: {archivo}")
         texto_total = ""
+        tipo_doc = clasificar_documento(archivo)
+        print(f"Documento clasificado como: {tipo_doc}")
+
 
         try:
             doc = fitz.open(ruta_pdf)
+            tiene_texto_embebido = False
 
             for num_pagina in range(len(doc)):
                 pagina = doc.load_page(num_pagina)
                 texto = pagina.get_text()
 
                 if texto.strip():  # Si tiene texto embebido
+                    tiene_texto_embebido = True
                     texto_total += f"\n--- Página {num_pagina + 1} (texto embebido) ---\n"
                     texto_total += texto
                 else:  # Si no tiene texto, hacemos OCR
-                    print(f"Aplicando OCR en página {num_pagina + 1}")
+                    #print(f"Aplicando OCR en página {num_pagina + 1}")
                     pix = pagina.get_pixmap(dpi=300)
                     imagen_np = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
                     
@@ -71,13 +75,26 @@ for archivo in os.listdir(config.CARPETA_PDFS):
                     texto_total += f"\n--- Página {num_pagina + 1} (OCR) ---\n"
                     texto_total += ocr_texto
 
-            nombre_salida = os.path.splitext(archivo)[0] + ".txt"
-            ruta_salida = os.path.join(config.CARPETA_SALIDA, nombre_salida)
+            # # Guardamos el texto
+            # nombre_salida = os.path.splitext(archivo)[0] + ".txt"
+            # ruta_salida = os.path.join(config.CARPETA_SALIDA, nombre_salida)
 
-            with open(ruta_salida, "w", encoding="utf-8") as f:
-                f.write(texto_total)
+            # with open(ruta_salida, "w", encoding="utf-8") as f:
+            #     f.write(texto_total)
 
-            print(f"Extracción finalizada para: {archivo}")
+
+            #durmiendo temporal
+            # # Primero extraemos imágenes embebidas
+            # extraer_imagenes_de_pdf(ruta_pdf, CARPETA_IMAGENES)
+
+            # # Ejecutamos tablas OCR visual
+            # extraer_tablas_ocr_pdf(ruta_pdf, CARPETA_TABLAS_OCR)
+
+            # # Sólo aplicamos camelot si tiene texto embebido
+            # if tiene_texto_embebido:
+            #     extraer_tablas_de_pdf(ruta_pdf, CARPETA_TABLAS)
+
+            #print(f"Extracción finalizada para: {archivo}")
 
         except Exception as e:
             print(f"Error procesando {archivo}: {e}")
