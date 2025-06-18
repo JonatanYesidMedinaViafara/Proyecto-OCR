@@ -1,0 +1,10 @@
+pytesseract
+pdf2image
+pandas
+openpyxl
+pillow
+PyPDF2
+pdfplumber
+opencv-python
+camelot-py[cv]
+tabulate
