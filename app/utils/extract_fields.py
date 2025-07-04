@@ -135,3 +135,23 @@ def extraer_campos_datacredito(texto):
                 datos['score_acierta'] = match.group(1)
 
     return datos
+
+class FieldExtractor:
+    @staticmethod
+    def extract(texto, tipo_documento):
+        """
+        Método base de extracción. Por ahora retorna un mock de datos extraídos.
+        Luego se conectará al JSON y reglas reales de cada documento.
+
+        Args:
+            texto (str): Texto extraído del documento.
+            tipo_documento (str): Tipo detectado (ej: 'CEDULA', 'FIANZA').
+
+        Returns:
+            dict: Diccionario con campos extraídos simulados.
+        """
+        return {
+            "tipo_documento": tipo_documento,
+            "longitud_texto": len(texto),
+            "texto_preview": texto[:50]
+        }

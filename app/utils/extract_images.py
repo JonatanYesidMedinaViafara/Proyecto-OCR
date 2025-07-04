@@ -37,3 +37,18 @@ def extraer_imagenes_de_pdf(ruta_pdf, carpeta_salida_imagenes):
 
             print(f"Imagen extraída: {nombre_archivo_imagen}")
 
+class ImageExtractor:
+    @staticmethod
+    def extract(pdf_path):
+        """
+        Método placeholder para extraer imágenes desde el PDF.
+        En futuras versiones aplicará lógica con PyMuPDF o pdf2image.
+
+        Args:
+            pdf_path (str): Ruta al archivo PDF.
+
+        Returns:
+            list: Lista vacía por ahora.
+        """
+        print(f"[ImageExtractor] Extracción simulada de imágenes en: {pdf_path}")
+        return []

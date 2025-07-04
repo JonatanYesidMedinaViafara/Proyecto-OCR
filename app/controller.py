@@ -1,10 +1,4 @@
 import os
-from app.utils.extract_fields import FieldExtractor
-from app.utils.extract_images import ImageExtractor
-from app.utils.extract_tables import TableExtractor
-from app.utils.extract_tables_ocr import TableOCRExtractor
-from app.utils.classify_document import classify_document
-from app.extractor import TextExtractor
 from app.utils.organize_by_reference import organizar_por_referencia
 
 class DocumentProcessor:
@@ -30,28 +24,8 @@ class DocumentProcessor:
     def procesar(self):
         for ruta_pdf in self.documentos:
             print(f"\n📄 Procesando: {os.path.basename(ruta_pdf)}")
-            tipo_doc = classify_document(ruta_pdf)
-            texto = TextExtractor.extract_text(ruta_pdf)
-            campos = FieldExtractor.extract(texto, tipo_doc)
-            print(f"→ Tipo: {tipo_doc}")
-            print(f"→ Campos extraídos: {campos}")
-            # Aquí puedes agregar validación, exportación, imágenes, tablas, etc.
-
-class TableExtractor:
-    @staticmethod
-    def extract(pdf_path):
-        """
-        Método simulado para extracción de tablas embebidas.
-        Futuro uso con Camelot o pdfplumber.
-
-        Args:
-            pdf_path (str): Ruta del archivo PDF.
-
-        Returns:
-            list: Lista vacía (simulación).
-        """
-        print(f"[TableExtractor] Extracción simulada de tablas en: {pdf_path}")
-        return []
+            # Procesamiento básico por ahora (sin extracción ni clasificación)
+            print(f"→ Archivo listo para OCR: {ruta_pdf}")
 
 
 def run_pipeline():
